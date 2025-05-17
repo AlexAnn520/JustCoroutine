@@ -40,12 +40,14 @@ android {
 }
 
 dependencies {
+    implementation(libs.kotlinx.coroutines.core) // 请使用最新的稳定版本
+    implementation(libs.kotlinx.coroutines.android) // 你提供的版本
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
-    implementation("androidx.cardview:cardview:1.0.0")
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.cardview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
