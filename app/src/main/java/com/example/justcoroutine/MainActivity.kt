@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,5 +38,19 @@ class MainActivity : AppCompatActivity() {
         // 设置适配器
         taskAdapter = TaskAdapter(taskList)
         recyclerView.adapter = taskAdapter
+
+
+        val coroutineScope = CoroutineScope(Dispatchers.Main)
+        coroutineScope.launch {
+            println("Coroutine launched on ${Thread.currentThread().name}")
+        }
+        coroutineScope.launch(Dispatchers.IO) {
+            println("Coroutine launched on 2 ${Thread.currentThread().name}")
+        }
+        coroutineScope.launch(Dispatchers.Default) {
+            println("Coroutine launched on 3 ${Thread.currentThread().name}")
+        }
+
+
     }
 }
