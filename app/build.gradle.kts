@@ -51,4 +51,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.retrofit.lib)
+    implementation(libs.retrofit.mock)
+    implementation(libs.retrofit.gson)
+    implementation(libs.retrofit.rxjava)
 }
